@@ -47,7 +47,7 @@
 					getElmId('select_2').value = '';  //「選択肢２」
 					getElmId('select_3').value = '';  //「選択肢３」
 					getElmId('select_4').value = '';  //「選択肢４」
-					getElmId('answer').value = '1';   //「正解」
+					getElmId('answer').value >= '1';   //「正解」
 					alert('クイズデータを登録しました。');
 				}
 			}
@@ -349,12 +349,10 @@ html += "<td>";
                     <li>選択４：<input type="text" id="select_4" value=""></li>
                 </ul>
                 <p>正解項目</p>
-                <select id="answer">
-                    <option value="1">選択１</option>
-                    <option value="2">選択２</option>
-                    <option value="3">選択３</option>
-                    <option value="4">選択４</option>
-                </select>
+                <input type="checkbox" id="answer" value="1">選択１
+                <input type="checkbox" id="answer" value="2">選択２
+                <input type="checkbox" id="answer" value="3">選択３
+                <input type="checkbox" id="answer" value="4">選択４
                 <ul id='select_error' class="error"></ul>
                 <button id="regist">登録</button>
             </section>
@@ -371,12 +369,10 @@ html += "<td>";
 					<li>選択４：<input type="text" id="edit_select_4" value=""></li>
 				</ul>
 				<p>正解項目</p>
-                <select id="edit_answer">
-                    <option value="1">選択１</option>
-                    <option value="2">選択２</option>
-                    <option value="3">選択３</option>
-                    <option value="4">選択４</option>
-                </select>
+                <input type="checkbox" id="answer" value="1">選択１
+                <input type="checkbox" id="answer" value="2">選択２
+                <input type="checkbox" id="answer" value="3">選択３
+                <input type="checkbox" id="answer" value="4">選択４
                 <ul id='select_error' class="error"></ul>
                 <button id="edit" data-id="0">編集実行</button>
             </section>
