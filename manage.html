@@ -81,8 +81,7 @@
                 }
                 let html = "<tr>";
                 html += "<td>" + learning_data['contents']; + "</td>";
-                html += "<ol>";
-html += "<td>";
+                html += "<td>";
 				html += "<ol>";
 				html += "<li>"+learning_data['select_1']+"</li>";
 				html += "<li>"+learning_data['select_2']+"</li>";
@@ -356,6 +355,7 @@ html += "<td>";
                 <ul id='select_error' class="error"></ul>
                 <button id="regist">登録</button>
             </section>
+
             <section id="edit_data">
                 <h2>学習データ編集</h2>
                 <p>問題</p>
@@ -376,21 +376,24 @@ html += "<td>";
                 <ul id='select_error' class="error"></ul>
                 <button id="edit" data-id="0">編集実行</button>
             </section>
+
             <section id="import_data">
                 <h2>インポート</h2>
                 <p>インポートする「JSONデータ」を入力してください。</p>
                 <textarea id="import_contents" rows="8" cols="80"></textarea>
                 <button id="import_btn">インポート実行</button>
             </section>
+
             <section id="export_data">
                 <h2>エクスポート</h2>
                 <textarea id="export_contents" rows="8" cols="80"></textarea>
                 <button id="export_btn">エクスポート実行</button>
             </section>
+
             <hr>
             <table id="learning_data">
-
             </table>
+
             <a href="index.html" id="to_main">メイン画面へ戻る</a>
         </div>
     </body>
