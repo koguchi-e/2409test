@@ -47,7 +47,7 @@
 					getElmId('select_2').value = '';  //「選択肢２」
 					getElmId('select_3').value = '';  //「選択肢３」
 					getElmId('select_4').value = '';  //「選択肢４」
-					getElmId('answer').value >= '1';   //「正解」
+					getElmId('answer').value = '1';   //「正解」
 					alert('クイズデータを登録しました。');
 				}
 			}
@@ -67,8 +67,8 @@
 
                 let table_header_html = "<caption>登録データ(" + g_learning_data.length + "件)</caption><tr><th>問題</th><th>選択肢</th><th>正解番号</th><th>正解数/問題チャレンジ回数</th><th>編集</th><th>削除</th>"
                 getElmId('learning_data').innerHTML = table_header_html + html;
-                setListerToEditBtn();    //「学習データ」編集用イベントリスナー設定
                 setListerToDeleteBtn();  //「学習データ」削除用イベントリスナー設定
+                setListerToEditBtn();    //「学習データ」編集用イベントリスナー設定
             }
 
             /**
@@ -348,10 +348,12 @@
                     <li>選択４：<input type="text" id="select_4" value=""></li>
                 </ul>
                 <p>正解項目</p>
-                <input type="checkbox" id="answer" value="1">選択１
-                <input type="checkbox" id="answer" value="2">選択２
-                <input type="checkbox" id="answer" value="3">選択３
-                <input type="checkbox" id="answer" value="4">選択４
+                <select id="answer">
+                    <option value="1">選択１</option>
+                    <option value="2">選択２</option>
+                    <option value="3">選択３</option>
+                    <option value="4">選択４</option>
+                </select>
                 <ul id='select_error' class="error"></ul>
                 <button id="regist">登録</button>
             </section>
@@ -369,10 +371,12 @@
 					<li>選択４：<input type="text" id="edit_select_4" value=""></li>
 				</ul>
 				<p>正解項目</p>
-                <input type="checkbox" id="answer" value="1">選択１
-                <input type="checkbox" id="answer" value="2">選択２
-                <input type="checkbox" id="answer" value="3">選択３
-                <input type="checkbox" id="answer" value="4">選択４
+                <select id="edit_answer">
+                    <option value="1">選択１</option>
+                    <option value="2">選択２</option>
+                    <option value="3">選択３</option>
+                    <option value="4">選択４</option>
+                </select>
                 <ul id='select_error' class="error"></ul>
                 <button id="edit" data-id="0">編集実行</button>
             </section>
