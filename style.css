@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* header */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+h1{
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* body */
+body{
+  margin: 0;
+}
+
+img.muuu{
+  vertical-align: bottom;
+  opacity: 0.6;
+} 
+
+.btn {
+  background: green;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
