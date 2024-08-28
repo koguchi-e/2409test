@@ -1,0 +1,85 @@
+h2 {
+    font-size: 16px;
+    border-bottom: dashed 2px #191970;
+    background-image: url("./images/mark.png");
+    background-repeat: no-repeat;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+a {
+    width: 200px;
+    display: block;
+    color: #ffffff;
+    background-color: #0000ff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+button {
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: 5px 3px;
+    padding: 15px;
+    background-color: #191970;
+    color: #ffffff;
+    border: none;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    display: flex;
+}
+li img{
+    width: 42px;
+    height: 43px;
+    margin: 8px 0;
+}
+hr {
+    margin-bottom: 50px;
+}
+.correct, .mistake {
+    padding: 0 5px;
+}
+#quiz {
+    width: 100%;
+    margin: 20px 5px 30px 5px;
+    padding: 20px;
+    border: solid 2px #efefef;
+    border-radius: 20px;
+    font-size: 24px;
+    box-sizing: border-box;
+    background-color: #008b8b;
+    color: #ffffff;
+    box-shadow: 0 0 15px 5px #008b8b;
+    text-shadow: 3px 3px 5px #000000
+}
+#answer li {
+    margin: 20px 0;
+}
+#answer button {
+    width: 50%;
+    height: 59px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+#start_screen {
+    margin-top: 50px;
+}
+#start_learning_btn {
+    width: 300px;
+    margin: 20px auto;
+    padding: 10px;
+}
+#learning_quiz button {
+    margin: 0 auto;
+}
+#quiz_num {
+    font-size: 24px;
+}
+#results {
+    margin-bottom: 20px;
+}
