@@ -32,18 +32,18 @@
     <body>
         <h1><b>じゃんけんゲーム</b></h1>
         <div class="choice">
-            <button onclick="palyGame('グー')">グー</button>
-            <button onclick="palyGame('チョキ')">チョキ</button>
-            <button onclick="palyGame('パー')">パー</button>
+            <button onclick="playGame('グー')">グー</button>
+            <button onclick="playGame('チョキ')">チョキ</button>
+            <button onclick="playGame('パー')">パー</button>
         </div>
         <div id="result"></div>
     </body>
 
     <!-- javascript -->
     <script>
-        function playGame(palyerChoicce){
+        function playGame(playerChoice){
             const choices = ["グー","チョキ","パー"];
-            const computerChoice = choices[Math.floor(Math.Random()*3)];
+            const computerChoice = choices[Math.floor(Math.random()*3)];
 
             let result;
             if(playerChoice === computerChoice){
