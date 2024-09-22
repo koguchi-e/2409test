@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>じゃんけんゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #deb887;
+        }
+        h1 {
+            color: #800000;
+        }
+        .choice {
+            max-width: 600px;
+            background-color: #800000;
+            margin: 0 auto;
+            padding: 30px 1px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #fffacd;
+        }
+        button:hover {
+            line-height: 40px;
+        }
+        #resultText {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #800000;
+        }
+        #to_top{
+            cursor: pointer;
+            text-align: center;
+            color: #800000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><b>じゃんけんゲーム</b></h1>
+    <p>
+        <div id="result">
+            <img id="playerFaceImg" src="boy_start.png" width="150">
+            <img id="playerChoiceImg" src="janken_gu.png" width="50">
+            <img id="computerFaceImg" src="mu-chan.png" width="150">
+            <img id="computerChoiceImg" src="janken_gu.png" width="50">
+        </div>
+        <div id="resultText"></div>
+    </p>
+    <div class="choice">
+        <button onclick="playGame('グー')">グー</button>
+        <button onclick="playGame('チョキ')">チョキ</button>
+        <button onclick="playGame('パー')">パー</button>
+    </div>    
+
+    <!-- javascript -->
+    <script>
+        function playGame(playerChoice){
+            const choices = ["グー","チョキ","パー"];
+            const computerChoice = choices[Math.floor(Math.random()*3)];
+
+            // プレイヤーの攻撃画像
+            let playerImgsrc;
+            if(playerChoice === "グー"){
+                playerImgsrc = "janken_gu.png";
+            }else if(playerChoice === "チョキ"){
+                playerImgsrc = "janken_choki.png";
+            }else if(playerChoice === "パー"){
+                playerImgsrc = "janken_pa.png";
+            }
+
+            // NPCの攻撃画像
+            let computerImgsrc;
+            if(computerChoice === "グー"){
+                computerImgsrc = "janken_gu.png";
+            }else if(computerChoice === "チョキ"){
+                computerImgsrc = "janken_choki.png";
+            }else if(computerChoice === "パー"){
+                computerImgsrc = "janken_pa.png";
+            }
+
+            // 画像の更新
+            document.getElementById("playerFaceImg").src = playerImgsrc;
+            document.getElementById("computerFaceImg").src = computerImgsrc;
+            document.getElementById("playerChoiceImg").src = playerImgsrc;
+            document.getElementById("computerChoiceImg").src = computerImgsrc;
+
+            // 対戦結果
+            let result;
+            let PlayerFaceImgsrc;
+            let ComputerFaceImgsrc;
+
+            if(playerChoice === computerChoice){
+                result = "あいこ";
+                PlayerFaceImgsrc = "boy_start.png";
+                ComputerFaceImgsrc = "mu-chan.png";
+            }else if(
+                (playerChoice === "グー" && computerChoice === "チョキ") ||
+                (playerChoice === "チョキ" && computerChoice === "パー") ||
+                (playerChoice === "パー" && computerChoice === "グー") 
+            ){
+                result = "勝ち";
+                PlayerFaceImgsrc = "boy_win.png";
+                ComputerFaceImgsrc = "mu-chan_lose.png";
+            }else{
+                result = "負け";
+                PlayerFaceImgsrc = "boy_lose.png";
+                ComputerFaceImgsrc = "mu-chan_win.png";
+            }
+                
+            document.getElementById("resultText").innerHTML =
+            `あなた： ${playerChoice}<br>
+            コンピュータ： ${computerChoice}<br>
+            結果： <b>${result}</b>`;
+
+            document.getElementById("playerFaceImg").src = PlayerFaceImgsrc;
+            document.getElementById("computerFaceImg").src = ComputerFaceImgsrc;
+        }
+    </script>
+</body>
+<P>
+    <a href="top.html" id="to_top">トップ画面へ戻る</a>
+</P>
+</html>
