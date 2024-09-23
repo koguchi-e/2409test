@@ -30,9 +30,10 @@
             cursor: pointer;
             border-radius: 10px;
             background-color: #fffacd;
+            width: 90%;
         }
         button:hover {
-            line-height: 40px;
+            line-height: 25px;
         }
         #result{
             display: flex;
@@ -56,33 +57,41 @@
             text-align: center;
             color: #800000;
         }
-        @media(max-width:1000px){
-            #result img{
-                max-width: 80px;
+        /* スマホでの表示設定 */
+        @media(max-width:600px){
+            h1{
+                font-size: 18px;
+                max-width: 90%;
+                margin: 0 auto;
             }
-            .choice{
-                width:80%;
+            #result img{
+                max-width: 50px;
+            }
+            .choice, #resetButton{
+                width:50%;
                 padding: 20px 1px;
             }
             button{
                 width: 90%;
-                font-size: 20px;
+                font-size: 10px;
                 padding:15px;
             }
             #resultText{
-                font-size:28px;
+                font-size: 18px;
+                max-width: 90%;
+                margin: 0 auto;
             }
             .playerFaceImg{
-                width:80px;
+                width: 80px;
             }
             .computerFaceImg{
-                width:80px;
+                width: 80px;
             }
             .playerChoiceImg{
-                width:30px;
+                width: 30px;
             }
             .computerrChoiceImg{
-                width:30px;
+                width: 30px;
             }
         }
     </style>
@@ -98,6 +107,7 @@
             <img id="computerChoiceImg" src="janken_gu.png" width="50">
         </div>
         <div id="resultText"></div>
+        <button id="resetButton" onclick="resetGame()">勝敗を初期化する</button>
     </p>
     <div class="choice">
         <button onclick="playGame('グー')">グー</button>
@@ -107,6 +117,10 @@
 
     <!-- javascript -->
     <script>
+        // プレイヤーの勝利回数
+        let playerWinCount = 0;
+        let computerWinCount = 0;
+
         function playGame(playerChoice){
             const choices = ["グー","チョキ","パー"];
             const computerChoice = choices[Math.floor(Math.random()*3)];
@@ -154,23 +168,39 @@
                 result = "勝ち";
                 PlayerFaceImgsrc = "boy_win.png";
                 ComputerFaceImgsrc = "mu-chan_lose.png";
+                playerWinCount++;
             }else{
                 result = "負け";
                 PlayerFaceImgsrc = "boy_lose.png";
                 ComputerFaceImgsrc = "mu-chan_win.png";
+                computerWinCount++;
             }
                 
             document.getElementById("resultText").innerHTML =
             `あなた： ${playerChoice}<br>
             コンピュータ： ${computerChoice}<br>
-            結果： <b>${result}</b>`;
+            結果： <b>${result}</b><br><br>
+            <b>勝利回数</b><br>
+            あなた：${playerWinCount}
+            コンピュータ：${computerWinCount}`;
 
             document.getElementById("playerFaceImg").src = PlayerFaceImgsrc;
             document.getElementById("computerFaceImg").src = ComputerFaceImgsrc;
         }
+
+        // 勝敗の初期化処理
+        function resetGame(){
+            playerWinCount = 0;
+            computerWinCount = 0;
+
+            document.getElementById("resultText").innerHTML =
+            `<b>勝利回数</b><br>
+            あなた：0
+            コンピュータ：0`;
+        }
     </script>
 </body>
 <P>
-    <a href="top.html" id="to_top">トップ画面へ戻る</a>
+    <a href="https://koguchi-e.github.io/github.io/index.html" id="to_top">トップ画面へ戻る</a>
 </P>
 </html>
