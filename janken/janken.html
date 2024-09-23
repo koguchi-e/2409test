@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <title>じゃんけんゲーム</title>
     <link rel="stylesheet" href="style.css">
     <!-- CSS -->
@@ -33,6 +34,18 @@
         button:hover {
             line-height: 40px;
         }
+        #result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        #result img{
+            max-width: 100px;
+            height: auto;
+            margin: 0 10px;
+        }
         #resultText {
             margin-top: 20px;
             font-size: 24px;
@@ -42,6 +55,35 @@
             cursor: pointer;
             text-align: center;
             color: #800000;
+        }
+        @media(max-width:1000px){
+            #result img{
+                max-width: 80px;
+            }
+            .choice{
+                width:80%;
+                padding: 20px 1px;
+            }
+            button{
+                width: 90%;
+                font-size: 20px;
+                padding:15px;
+            }
+            #resultText{
+                font-size:28px;
+            }
+            .playerFaceImg{
+                width:80px;
+            }
+            .computerFaceImg{
+                width:80px;
+            }
+            .playerChoiceImg{
+                width:30px;
+            }
+            .computerrChoiceImg{
+                width:30px;
+            }
         }
     </style>
 </head>
@@ -129,6 +171,6 @@
     </script>
 </body>
 <P>
-    <a href="https://koguchi-e.github.io/github.io/index.html" id="to_top">トップ画面へ戻る</a>
+    <a href="top.html" id="to_top">トップ画面へ戻る</a>
 </P>
 </html>
