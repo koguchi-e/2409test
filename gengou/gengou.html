@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>元号検索</title>
+    <link href="../common.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1><b>元号検索</b></h1>
+    <p>
+        西暦
+        <input type="text" id="seireki" size="20">年
+        <button onclick="showGengou()">検索</button>
+        <div id="resultGengou"></div>
+    </p>
+
+    <!-- javascript -->
+    <script>
+    var seirekiCount = function (seireki){
+        if( seireki !== "" ){
+            if( seireki >= 2019 ){
+                return "令和";
+            }else if( seireki >= 1989 ){
+                return "平成";
+            }else{
+                return "平成以前の元号";
+            }
+        }
+        return "不明";
+    }
+
+    // 検索ボタンを関数とした機能の記述
+    function showGengou(){
+        // seirekiをhtmlから取得
+        var seireki = document.getElementById("seireki").value;
+        // 結果を表示・seirekiCountを計算
+        var resultGengou = seirekiCount(seireki);
+        document.getElementById("resultGengou").textContent = "元号だと「" + resultGengou + "」です。";
+    }
+    </script>
+
+</body>
+<P>
+    <a href="https://koguchi-e.github.io/github.io/index.html" id="to_top">トップ画面へ戻る</a>
+</P>
+</html>
