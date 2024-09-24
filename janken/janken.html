@@ -5,17 +5,39 @@
     <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <title>じゃんけんゲーム</title>
     <link rel="stylesheet" href="style.css">
+
     <!-- CSS -->
     <style>
-        body {
+        body{
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #deb887;
         }
-        h1 {
+        h1{
             color: #800000;
         }
-        .choice {
+        button{
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #fffacd;
+            width: auto;
+            flex-grow: 1;
+        }
+        #resetButton{
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #fffacd;
+            width: auto;
+            flex-grow: 1;
+        }
+        .choice{
+            display:flex;
+            justify-content:center;
             max-width: 600px;
             background-color: #800000;
             margin: 0 auto;
@@ -23,16 +45,7 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 10px;
-            background-color: #fffacd;
-            width: 90%;
-        }
-        button:hover {
+        button:hover{
             line-height: 25px;
         }
         #result{
@@ -47,7 +60,7 @@
             height: auto;
             margin: 0 10px;
         }
-        #resultText {
+        #resultText{
             margin-top: 20px;
             font-size: 24px;
             color: #800000;
@@ -67,14 +80,20 @@
             #result img{
                 max-width: 50px;
             }
-            .choice, #resetButton{
-                width:50%;
+            .choice{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width:90%;
                 padding: 20px 1px;
             }
             button{
                 width: 90%;
                 font-size: 10px;
                 padding:15px;
+            }
+            #resetButton{
+                width: 90%;
             }
             #resultText{
                 font-size: 18px;
