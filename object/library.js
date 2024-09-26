@@ -80,4 +80,59 @@ document.getElementById("add-book-btn").addEventListener("click", function() {
     const author = document.getElementById("book-author").value;
     const isbn = document.getElementById("book-isbn").value;
 
-    if (title &&
+    if (title && author && isbn) {
+        const newBook = new Book(title, author, isbn);
+        library.addBook(newBook);
+        showMessage(`${title} が追加されました。`);
+    } else {
+        showMessage('すべてのフィールドを入力してください。');
+    }
+});
+
+document.getElementById("add-member-btn").addEventListener("click", function() {
+    const name = document.getElementById("member-name").value;
+    const memberId = document.getElementById("member-id").value;
+
+    if (name && memberId) {
+        const newMember = new Member(name, memberId);
+        library.addMember(newMember);
+        showMessage(`${name} さんが登録されました。`);
+    } else {
+        showMessage('すべてのフィールドを入力してください。');
+    }
+});
+
+document.getElementById("borrow-book-btn").addEventListener("click", function() {
+    const memberId = document.getElementById("borrow-member-id").value;
+    const bookTitle = document.getElementById("borrow-book-title").value;
+
+    const member = library.members.find(m => m.memberId === memberId);
+    const book = library.findBookByTitle(bookTitle);
+
+    if (member && book) {
+        member.borrowBook(book);
+        showMessage(`${member.name} さんが ${book.title} を借りました。`);
+    } else {
+        showMessage('会員または本が見つかりませんでした。');
+    }
+});
+
+document.getElementById("return-book-btn").addEventListener("click", function() {
+    const memberId = document.getElementById("borrow-member-id").value;
+    const bookTitle = document.getElementById("borrow-book-title").value;
+
+    const member = library.members.find(m => m.memberId === memberId);
+    const book = library.findBookByTitle(bookTitle);
+
+    if (member && book) {
+        member.returnBook(book);
+        showMessage(`${member.name} さんが ${book.title} を返却しました。`);
+    } else {
+        showMessage('会員または本が見つかりませんでした。');
+    }
+});
+
+function showMessage(message) {
+    const output = document.getElementById("output");
+    output.textContent = message;
+}
