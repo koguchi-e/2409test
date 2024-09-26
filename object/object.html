@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <link rel="icon" href="../icon_mu-chan.jpg">
+    <title>オブジェクト指向を使用した図書管理システム</title>
+    <link href="../common.css" rel="stylesheet" type="text/css">
+
+    <!-- CSS -->
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #deb887;
+        }
+        h1, h2{
+            color: #800000;
+        }
+        .book{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1><b>オブジェクト指向を使用した図書管理システム</b></h1>
+    <div class="book">
+        <h2>新しい本の追加</h2>
+        <table>
+            <tr>
+                <td style="text-align: right"><laber for="book-title">本のタイトル：</laber></td>
+                <td><input type="text" id="book-title"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right"><laber for="book-author">著者：</laber></td>
+                <td><input type="text" id="book-author"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right"><laber for="book-isbn">ISBNコード：</laber></td>
+                <td><input type="text" id="book-isbn"></td>
+            </tr>
+        </table>
+        <button id="add-book-btn">本を追加</button>
+    </div>
+
+    <div class="member"></div>
+        <h2>会員を登録</h2>
+        <table>
+            <tr>
+                <td style="text-align: right"><laber for="member-name">名前：</laber></td>
+                <td><input type="text" id="member-name"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right"><laber for="member-id">会員ID：</laber></td>
+                <td><input type="text" id="member-id"></td>
+            </tr>
+        </table>
+        <button id="add-member-btn">本を追加</button>
+    </div>
+    
+    <div class="borrow-return">
+        <h2>本を借りる・返す</h2>
+        <table>
+            <tr>
+                <td style="text-align: right"><laber for="borrow-borrow-book-title">会員ID：</laber></td>
+                <td><input type="text" id="borrow-borrow-book-title"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right"><laber for="borrow-book-title">本のタイトル：</laber></td>
+                <td><input type="text" id="borrow-book-title"></td>
+            </tr>
+        </table>
+        <button id="borrow-book-btn">借りる</button>
+        <button id="return-book-btn">返す</button>
+    </div>
+
+    <div class="output" id="output"></div>
+
+    <!-- javascript -->
+    <script src="library.js"></script>
+</body>
+<P>
+    <a href="https://koguchi-e.github.io/github.io/index.html" id="to_top">トップ画面へ戻る</a>
+</P>
+</html>
