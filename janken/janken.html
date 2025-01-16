@@ -121,10 +121,10 @@
     <h1><b>じゃんけんゲーム</b></h1>
     <p>
         <div id="result">
-            <img id="playerFaceImg" src="boy_start.png" width="150">
-            <img id="playerChoiceImg" src="janken_gu.png" width="50">
-            <img id="computerFaceImg" src="mu-chan.png" width="150">
-            <img id="computerChoiceImg" src="janken_gu.png" width="50">
+            <img id="playerFaceImg" src="image/boy_start.png" width="150">
+            <img id="playerChoiceImg" src="image/janken_gu.png" width="50">
+            <img id="computerFaceImg" src="image/mu-chan.png" width="150">
+            <img id="computerChoiceImg" src="image/janken_gu.png" width="50">
         </div>
         <div id="resultText"></div>
         <button id="resetButton" onclick="resetGame()">勝敗を初期化する</button>
@@ -148,21 +148,21 @@
             // プレイヤーの攻撃画像
             let playerImgsrc;
             if(playerChoice === "グー"){
-                playerImgsrc = "janken_gu.png";
+                playerImgsrc = "image/janken_gu.png";
             }else if(playerChoice === "チョキ"){
-                playerImgsrc = "janken_choki.png";
+                playerImgsrc = "image/janken_choki.png";
             }else if(playerChoice === "パー"){
-                playerImgsrc = "janken_pa.png";
+                playerImgsrc = "image/janken_pa.png";
             }
 
             // NPCの攻撃画像
             let computerImgsrc;
             if(computerChoice === "グー"){
-                computerImgsrc = "janken_gu.png";
+                computerImgsrc = "image/janken_gu.png";
             }else if(computerChoice === "チョキ"){
-                computerImgsrc = "janken_choki.png";
+                computerImgsrc = "image/janken_choki.png";
             }else if(computerChoice === "パー"){
-                computerImgsrc = "janken_pa.png";
+                computerImgsrc = "image/janken_pa.png";
             }
 
             // 画像の更新
@@ -178,21 +178,21 @@
 
             if(playerChoice === computerChoice){
                 result = "あいこ";
-                PlayerFaceImgsrc = "boy_start.png";
-                ComputerFaceImgsrc = "mu-chan.png";
+                PlayerFaceImgsrc = "image/boy_start.png";
+                ComputerFaceImgsrc = "image/mu-chan.png";
             }else if(
                 (playerChoice === "グー" && computerChoice === "チョキ") ||
                 (playerChoice === "チョキ" && computerChoice === "パー") ||
                 (playerChoice === "パー" && computerChoice === "グー") 
             ){
                 result = "勝ち";
-                PlayerFaceImgsrc = "boy_win.png";
-                ComputerFaceImgsrc = "mu-chan_lose.png";
+                PlayerFaceImgsrc = "image/boy_win.png";
+                ComputerFaceImgsrc = "image/mu-chan_lose.png";
                 playerWinCount++;
             }else{
                 result = "負け";
-                PlayerFaceImgsrc = "boy_lose.png";
-                ComputerFaceImgsrc = "mu-chan_win.png";
+                PlayerFaceImgsrc = "image/boy_lose.png";
+                ComputerFaceImgsrc = "image/mu-chan_win.png";
                 computerWinCount++;
             }
                 
